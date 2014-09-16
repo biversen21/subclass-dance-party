@@ -14,8 +14,8 @@ var Dancer = function(top, left, timeBetweenSteps, cssClass) {
 
 Dancer.prototype.move = function(rect) {
   if (this.hasOwnProperty('xvelocity') && this.hasOwnProperty('yvelocity')) {
-    this.left += this.xvelocity;
-    this.top += this.yvelocity;
+    this.left += this.xvelocity * (this.moveInterval/1000);
+    this.top += this.yvelocity * (this.moveInterval/1000);
     if(this.left < rect.left || this.left > rect.right) {
       this.xvelocity *= -1;
     }

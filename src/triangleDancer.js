@@ -1,6 +1,11 @@
 
 var TriangleDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = Dancer.prototype.step;
+  this.xvelocity = -25+Math.random()*50;
+  this.yvelocity = -25+Math.random()*50;
+  this.moveInterval = 30;
+  var that = this;
+  setInterval(function() {that.move(danceFloorBoundaries);}, this.moveInterval);
   Dancer.call(this, top, left, timeBetweenSteps, "triangleDancer");
 };
 

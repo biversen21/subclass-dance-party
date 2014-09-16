@@ -18,6 +18,17 @@ body, a:link, a:visited, a:active{
   background-size: 1400px;
   background-position: center;
 }
+#floorboundary{
+  background-color:black;
+  top: 25%;
+  height: 45%;
+  width: 40%;
+  left: 30%;
+  position:absolute;
+  z-index:0;
+  opacity:0.01;
+}
+
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
@@ -33,14 +44,23 @@ body, a:link, a:visited, a:active{
   position: absolute;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  background-image: url('http://gifdanceparty.giphy.com/dancers/fatspidey.gif');
+  height: 300px;
+  width: 200px;
+  z-index: 20;
 }
 .dancerMove{
-  border:10px solid green;
+  background-image: url('http://gifdanceparty.giphy.com/dancers/carlton.gif');
+  height: 350px;
+  width: 280px;
+  z-index: 20;
 }
 .triangleDancer{
-  border:20px solid blue;
+  /*border:20px solid blue;*/
+  background-image: url('./theworm.gif');
+  height: 200px;
+  width: 200px;
+  z-index: 20;
 }
 
 

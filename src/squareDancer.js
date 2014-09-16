@@ -1,10 +1,11 @@
 
 var SquareDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = Dancer.prototype.step;
-  this.xvelocity = 10;
-  this.yvelocity = 10;
+  this.xvelocity = -25+Math.random()*50;
+  this.yvelocity = -25+Math.random()*50;
+  this.moveInterval = 30;
   var that = this;
-  setInterval(function() {that.move(danceFloorBoundaries);}, 300);
+  setInterval(function() {that.move(danceFloorBoundaries);}, this.moveInterval);
   Dancer.call(this, top, left, timeBetweenSteps, "dancerMove");
 };
 
@@ -20,5 +21,4 @@ SquareDancer.prototype.step = function() {
 var makeSquareDancer = function(top, left, timeBetweenSteps) {
   return new SquareDancer(top, left, timeBetweenSteps);
 };
-
 

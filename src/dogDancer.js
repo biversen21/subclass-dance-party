@@ -18,6 +18,6 @@ DogDancer.prototype.step = function() {
 };
 
 
-var makeTriangleDancer = function(top, left, timeBetweenSteps) {
+var makeDogDancer = function(top, left, timeBetweenSteps) {
   return new DogDancer(top, left, timeBetweenSteps);
 };

@@ -1,5 +1,5 @@
 
-var BlinkyDancer = function(top, left, timeBetweenSteps) {
+var FatDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = Dancer.prototype.step;
   this.xvelocity = 50;
   this.yvelocity = 50;
@@ -9,15 +9,15 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps, "fatDancer");
 };
 
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype.constructor = BlinkyDancer;
+FatDancer.prototype = Object.create(Dancer.prototype);
+FatDancer.prototype.constructor = FatDancer;
 
-BlinkyDancer.prototype.step = function() {
+FatDancer.prototype.step = function() {
   this.oldStep.call(this);   //Dancer.prototype.step.call(this);
   //this.$node.toggle();
 };
 
 
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  return new BlinkyDancer(top, left, timeBetweenSteps);
+  return new FatDancer(top, left, timeBetweenSteps);
 };

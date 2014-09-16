@@ -5,9 +5,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
-    <script src="src/blinkyDancer.js"></script>
+    <script src="src/fatDancer.js"></script>
     <script src="src/squareDancer.js"></script>
-    <script src="src/triangleDancer.js"></script>
+    <script src="src/dogDancer.js"></script>
     <script src="src/commands.js"></script>
 
 
@@ -18,9 +18,6 @@
       document.onmousemove = readMouseMove;
     </script>-->
 
-
-
-
   </head>
   <body>
 
@@ -28,12 +25,13 @@
 
     <button id = "lineupButton" onclick = "lineup()">lineup</button>
     <button id = "packDanceFloorButton" onclick = "packDanceFloor()">get on the floor</button>
+    <button id = "followButton" onclick = "followDancers()">follow</button>
 
     <div class="topbar">
       <span class="title">object dance party</span>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a fat dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeSquareDancer">add a square dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeTriangleDancer">add a dog</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeDogDancer">add a dog</a>
     </div>
 
     <div id="dancefloor">
@@ -41,5 +39,10 @@
     </div>
 
     <script src="src/init.js"></script>
+    <script>
+    $('div').click(function() {
+      $(this).addClass('.active');
+    });
+    </script>
   </body>
 </html>

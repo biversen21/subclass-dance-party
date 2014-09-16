@@ -1,15 +1,13 @@
 // commands for all dancers
 
-var lineup, newPosition, danceFloorBoundaries, randRange, packDanceFloor;
+var lineup, newPosition, danceFloorBoundaries, randRange, packDanceFloor, followDancers;
 
 $(document).ready(function (){
 
   lineup = function () {
-
     var newLeft = danceFloorBoundaries.left;
     var newTop = danceFloorBoundaries.up;
     var padding = 80;
-
     window.dancers.forEach(function(item) {
       item.setPosition(newTop, newLeft);
       newLeft += padding;
@@ -21,14 +19,32 @@ $(document).ready(function (){
   };
 
   packDanceFloor = function () {
-
     window.dancers.forEach(function(item) {
-
       var coord = newPosition(danceFloorBoundaries);
-
       item.setPosition(coord.y, coord.x);
     });
+  };
 
+  followDancers = function () {
+    if (window.followMode === false) {
+      var count = 0;
+      window.dancers.forEach(function(item){
+        if (count > 0) {
+          item.following = window.dancers[count-1];
+        }
+        count++;
+      });
+      window.followMode = true;
+    } else {
+      window.dancers.forEach(function(item){
+        item.top = $("body").height() * Math.random();
+        item.left = $("body").width() * Math.random();
+        delete item.following;
+      });
+      window.followMode = false;
+
+      packDanceFloor();
+    }
   };
 
   /*

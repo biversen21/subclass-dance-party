@@ -6,7 +6,7 @@ var SquareDancer = function(top, left, timeBetweenSteps) {
   this.moveInterval = 30;
   var that = this;
   setInterval(function() {that.move(danceFloorBoundaries);}, this.moveInterval);
-  Dancer.call(this, top, left, timeBetweenSteps, "dancerMove");
+  Dancer.call(this, top, left, timeBetweenSteps, "squareDancer");
 };
 
 SquareDancer.prototype = Object.create(Dancer.prototype);
@@ -16,7 +16,6 @@ SquareDancer.prototype.step = function() {
   this.oldStep.call(this);   //Dancer.prototype.step.call(this);
   //this.$node.toggle();
 };
-
 
 var makeSquareDancer = function(top, left, timeBetweenSteps) {
   return new SquareDancer(top, left, timeBetweenSteps);

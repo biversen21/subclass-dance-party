@@ -15,7 +15,7 @@ body, a:link, a:visited, a:active{
   height: 100%;
   width: 100%;
   position: absolute;
-  background-size: 1400px;
+  background-size: 100%;
   background-position: center;
 }
 #floorboundary{
@@ -28,7 +28,6 @@ body, a:link, a:visited, a:active{
   z-index:0;
   opacity:0.01;
 }
-
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
@@ -43,36 +42,39 @@ body, a:link, a:visited, a:active{
 .base{
   position: absolute;
 }
-.dancer{
+.fatDancer{
   background-image: url('http://gifdanceparty.giphy.com/dancers/fatspidey.gif');
   height: 300px;
   width: 200px;
   z-index: 20;
   transition: 0.2s
 }
-.dancer:hover{
-  transform: scale(2,1);
+.fatDancer:hover{
+  transform: scale(3,1);
 }
-.dancerMove{
+.fatDancer:active{
+  opacity:0;
+}
+.squareDancer{
   background-image: url('http://gifdanceparty.giphy.com/dancers/carlton.gif');
   height: 350px;
   width: 280px;
   z-index: 20;
   transition: 0.2s
 }
-.dancerMove:hover{
+.squareDancer:hover{
   opacity:0.2;
 }
-.triangleDancer{
+.dogDancer{
   /*border:20px solid blue;*/
   background-image: url('./theworm.gif');
   height: 200px;
   width: 200px;
   z-index: 20;
+  transition: 0.2s;
+}
+.dogDancer:hover {
+  transform: rotate(720deg);
   transition: 2s;
 }
-.triangleDancer:hover {
-  transform: rotate(720deg);
-}
-
 

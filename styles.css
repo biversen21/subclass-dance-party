@@ -48,12 +48,20 @@ body, a:link, a:visited, a:active{
   height: 300px;
   width: 200px;
   z-index: 20;
+  transition: 0.2s
+}
+.dancer:hover{
+  transform: scale(2,1);
 }
 .dancerMove{
   background-image: url('http://gifdanceparty.giphy.com/dancers/carlton.gif');
   height: 350px;
   width: 280px;
   z-index: 20;
+  transition: 0.2s
+}
+.dancerMove:hover{
+  opacity:0.2;
 }
 .triangleDancer{
   /*border:20px solid blue;*/
@@ -61,6 +69,10 @@ body, a:link, a:visited, a:active{
   height: 200px;
   width: 200px;
   z-index: 20;
+  transition: 2s;
+}
+.triangleDancer:hover {
+  transform: rotate(720deg);
 }
 
 

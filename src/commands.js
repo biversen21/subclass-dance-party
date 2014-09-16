@@ -1,29 +1,34 @@
 // commands for all dancers
 
-var lineup, newPosition, danceFloorBoundaries, randRange;
+var lineup, newPosition, danceFloorBoundaries, randRange, packDanceFloor;
 
 $(document).ready(function (){
 
   lineup = function () {
 
-    var newLeft = 40;
-    var newTop = 80;
+    var newLeft = danceFloorBoundaries.left;
+    var newTop = danceFloorBoundaries.up;
     var padding = 80;
 
     window.dancers.forEach(function(item) {
-      // item.setPosition(newTop, newLeft);
-      // newLeft += padding;
-      // if (newLeft > screen.width - 100) {
-      //   newLeft = 40;
-      //   newTop += padding;
-      // }
+      item.setPosition(newTop, newLeft);
+      newLeft += padding;
+      if (newLeft > danceFloorBoundaries.right) {
+        newLeft = danceFloorBoundaries.left;
+        newTop += padding;
+      }
+    });
+  };
+
+  packDanceFloor = function () {
+
+    window.dancers.forEach(function(item) {
 
       var coord = newPosition(danceFloorBoundaries);
 
       item.setPosition(coord.y, coord.x);
-
-
     });
+
   };
 
   /*
@@ -34,7 +39,7 @@ $(document).ready(function (){
       x: randRange(rect.left, rect.right),
       y: randRange(rect.up, rect.down)
     };
-  }
+  };
 
   danceFloorBoundaries = (function (){
     var floorboundary = $("#floorboundary");

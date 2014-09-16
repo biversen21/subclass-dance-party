@@ -7,7 +7,25 @@ var Dancer = function(top, left, timeBetweenSteps, cssClass) {
   this.$node.addClass('base');
   this.timeBetweenSteps = timeBetweenSteps;
   this.setPosition(top, left);
+
+
   this.step();
+};
+
+Dancer.prototype.move = function(rect) {
+  if (this.hasOwnProperty('xvelocity') && this.hasOwnProperty('yvelocity')) {
+    this.left += this.xvelocity;
+    this.top += this.yvelocity;
+    if(this.left < rect.left || this.left > rect.right) {
+      this.xvelocity *= -1;
+    }
+    if(this.top < rect.up || this.top > rect.down) {
+      this.yvelocity *= -1;
+    }
+
+    this.setPosition(this.top, this.left);
+
+  }
 };
 
 Dancer.prototype.step = function(){
@@ -16,6 +34,12 @@ Dancer.prototype.step = function(){
     // that = that || this;
     var that = this;
     setTimeout(function(){ that.step(); }, that.timeBetweenSteps);
+};
+
+Dancer.prototype.distance = function(other) {
+  var dx = this.left - other.left;
+  var dy = this.top - other.top;
+  return Math.sqrt(dx*dx + dy*dy);
 };
 
 Dancer.prototype.setPosition = function(top, left){

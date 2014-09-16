@@ -9,7 +9,7 @@ TriangleDancer.prototype.constructor = TriangleDancer;
 
 TriangleDancer.prototype.step = function() {
   this.oldStep.call(this);   //Dancer.prototype.step.call(this);
-  this.$node.toggle();
+  //this.$node.toggle();
 };
 
 

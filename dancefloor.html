@@ -9,15 +9,31 @@
     <script src="src/squareDancer.js"></script>
     <script src="src/triangleDancer.js"></script>
     <script src="src/commands.js"></script>
+
+
+    <!--<script>
+      function readMouseMove(e){
+        console.log(e.clientX, e.clientY);
+      }
+      document.onmousemove = readMouseMove;
+    </script>-->
+
+
+
+
   </head>
   <body>
+
     <button id = "lineupButton" onclick = "lineup()">lineup</button>
+
     <div class="topbar">
       <span class="title">object dance party</span>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeSquareDancer">add a square dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeTriangleDancer">add a triangle dancer</a>
     </div>
+
+    <div id="dancefloor"></div>
     <script src="src/init.js"></script>
   </body>
 </html>

@@ -66,9 +66,8 @@ body, a:link, a:visited, a:active{
   opacity:0.2;
 }
 .dogDancer{
-  /*border:20px solid blue;*/
-  background-image: url('./theworm.gif');
-  height: 200px;
+  background-image: url('http://gifdanceparty.giphy.com/dancers/theworm.gif');
+  height: 300px;
   width: 200px;
   z-index: 20;
   transition: 0.2s;
@@ -76,5 +75,12 @@ body, a:link, a:visited, a:active{
 .dogDancer:hover {
   transform: rotate(720deg);
   transition: 2s;
+}
+.controlDancer {
+  background-image: url('http://gifdanceparty.giphy.com/dancers/obama.gif');
+  height: 500px;
+  width: 200px;
+  z-index: 9001;
+  transition: 0.2s;
 }
 

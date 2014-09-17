@@ -1,7 +1,7 @@
 
 var Dancer = function(top, left, timeBetweenSteps, cssClass) {
   window.dancers.push(this);
-  cssClass = cssClass || 'dancer';
+  cssClass = cssClass;
 
   this.$node = $('<div class="' + cssClass + '"></div>');
   this.$node.addClass('base');

@@ -1,10 +1,10 @@
 
 var FatDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = Dancer.prototype.step;
-  this.xvelocity = 50;
-  this.yvelocity = 50;
-  this.moveInterval = 30;
   var that = this;
+  this.xvelocity = -25+Math.random()*50;
+  this.yvelocity = -25+Math.random()*50;
+  this.moveInterval = 30;
   setInterval(function() {that.move(danceFloorBoundaries);}, this.moveInterval);
   Dancer.call(this, top, left, timeBetweenSteps, "fatDancer");
 };
@@ -13,7 +13,7 @@ FatDancer.prototype = Object.create(Dancer.prototype);
 FatDancer.prototype.constructor = FatDancer;
 
 FatDancer.prototype.step = function() {
-  this.oldStep.call(this);   //Dancer.prototype.step.call(this);
+  this.oldStep.call(this);
   //this.$node.toggle();
 };
 

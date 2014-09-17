@@ -69,9 +69,6 @@ $(document).ready(function (){
   })();
 
   randRange = function(lower, upper) {
-    if (lower > upper) {
-      throw 'inconsistent bounds';
-    }
     return lower + Math.random() * (upper - lower);
   };
 });

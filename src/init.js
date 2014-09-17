@@ -4,14 +4,12 @@ $(document).ready(function(){
   window.followMode = false;
 
   $(".addDancerButton").on("click", function(event){
-
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
 
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
     var dancer = dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
@@ -19,8 +17,5 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
   });
-
-  // click on any dancer and scatter them all.
-  $(".base").on("click", function (){return scatter();});
 });
 

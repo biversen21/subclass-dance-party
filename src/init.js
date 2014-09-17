@@ -3,6 +3,9 @@ $(document).ready(function(){
 
   window.followMode = false;
 
+  $('body').append(makeControlDancer().$node);
+  packDanceFloor();
+
   $(".addDancerButton").on("click", function(event){
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
 
@@ -16,6 +19,8 @@ $(document).ready(function(){
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+
   });
 });
 

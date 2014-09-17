@@ -22,7 +22,9 @@
   </head>
   <body>
 
-  <audio src="tomjones.wmv.mp3" controls autoplay></audio>
+  <audio id = "tomJones" src="sounds/tomjones.wmv.mp3" autoplay muted></audio>
+  <audio id = "singleLadies" src="sounds/singleLadies.mp3" autoplay></audio>
+  <button id = "changeMusic">change music</button>
 
     <button id = "lineupButton" onclick = "lineup()">lineup</button>
     <button id = "packDanceFloorButton" onclick = "packDanceFloor()">get on the floor</button>
@@ -33,7 +35,7 @@
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a fat dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeSquareDancer">add a square dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeDogDancer">add a dog</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeControlDancer">add a controllable dancer</a>
+      <!--<a href="#" class="addDancerButton" data-dancer-maker-function-name="makeControlDancer">add a controllable dancer</a>-->
     </div>
 
     <div id="dancefloor">
@@ -42,8 +44,16 @@
 
     <script src="src/init.js"></script>
     <script>
+    var tomJones = false;
+    var singleLadies = true;
     $('div').click(function() {
       $(this).addClass('.active');
+    });
+    $('#changeMusic').on('click', function() {
+      tomJones = !tomJones;
+      singleLadies = !singleLadies;
+      document.getElementById('tomJones').muted = tomJones;
+      document.getElementById('singleLadies').muted = singleLadies;
     });
     </script>
   </body>
